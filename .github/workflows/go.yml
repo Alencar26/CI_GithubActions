@@ -33,8 +33,8 @@ jobs:
 
     - name: Meu-segredo
       env:
-        MEU_SEGRDO: ${{ secrets.MEU_SEGREDO }}
-      run: echo --> $MEU_SEGRDO <--
+        SEGREDO: ${{ secrets.MEU_SEGREDO }}
+      run: echo ${{ secrets.MEU_SEGREDO }}
 
     - name: Test
       run: go test -v main_test.go
