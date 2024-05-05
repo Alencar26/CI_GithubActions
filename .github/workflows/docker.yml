@@ -31,5 +31,5 @@ jobs:
         # Push is a shorthand for --output=type=registry
         push: true
         # List of tags
-        tags: al3ncar/go_ci:${{github.ref_name}}
+        tags: alencar26/go_ci:${{github.ref_name}}
         
