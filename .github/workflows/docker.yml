@@ -20,4 +20,16 @@ jobs:
       with:
         username: ${{ vars.USER_DOCKER_HUB}}
         password: ${{ secrets.PASS_DOCKER_HUB }}
-                
+
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v5.3.0
+      with:
+        # Build's context is the set of files located in the specified PATH or URL
+        context: .
+        # Path to the Dockerfile
+        file: ./Dockerfile
+        # Push is a shorthand for --output=type=registry
+        push: true
+        # List of tags
+        tags: al3ncar/go_ci:${{github.ref_name}}
+        
